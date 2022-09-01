@@ -1,0 +1,19 @@
+Exergenesis App Requirements 
+
+1. Travelers can signup and register 
+
+2. Authenticated users can specify a temperature range 
+
+3. Authenticated users can specify a month they want to vacation 
+
+4. Authenticated users can specify amount of rainfall
+
+5. Can specify country 
+
+6. Can specify continent 
+
+7. Add vacation spots to an array 
+
+8. Delete vacation spots from the stored array 
+
+9. Display all chosen vacation spots on a map with pins 
