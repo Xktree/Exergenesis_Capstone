@@ -16,4 +16,4 @@ Exergenesis App Requirements
 
 8. Delete vacation spots from the stored array 
 
-9. Display all chosen vacation spots on a map with pins 
+9. Display all chosen vacation spots on a map with pins P
