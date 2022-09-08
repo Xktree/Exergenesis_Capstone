@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import get_object_or_404
 from .models import Favorites
-from .serializers import UserSerializer, FavoritesSerializer
+from .serializers import FavoritesSerializer
 
 # Create your views here.
 
