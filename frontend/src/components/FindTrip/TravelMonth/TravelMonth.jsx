@@ -1,42 +1,27 @@
-function City(props) {
-  
-    function saveFavorite(evt) {
-      
-      let params = {
-        // month:month, //Future feature
-        city_name: evt.target.id.replace("_"," "),
-        lat: evt.target.dataset.lat,
-        lon: evt.target.dataset.lon,
-        country: evt.target.dataset.country
-      }
-  
-      if (evt.target.className === "far fa-star") {
-        evt.target.className = "fas fa-star";
-        fetch("/save_to_session?" + new URLSearchParams(params));
-      } else {
-        evt.target.className = "far fa-star";
-        fetch("/unsave_to_session?" + new URLSearchParams(params));
-      }
-    }
-    
-    let favoriteStatus
-    const starred = "fas fa-star"; // FontAwesome default class 
-    const notStarred = "far fa-star"; // FontAwesome default class 
-    
-    Object.keys(props.favoriteDict).includes(props.name) ? favoriteStatus = starred : favoriteStatus = notStarred
-  
-    return (
-      <React.Fragment>
-        <p className="city-name">
-          <i className={favoriteStatus}
-              data-lat={props.lat} 
-              data-lon={props.lon}
-              data-country={props.country} 
-              id={`${props.name.replace(" ","_")}`}
-              onClick={saveFavorite}>
-          </i> 
-            {props.name}
-        </p>
-      </React.Fragment>
-    )
-  }
+<ReactBootstrap.Form.Group controlId="month_group">
+          <ReactBootstrap.Form.Label>Travel Month(s)</ReactBootstrap.Form.Label>
+          {/* https://stackoverflow.com/questions/28624763/retrieving-value-from-select-with-multiple-option-in-react */}
+          <ReactBootstrap.Form.Control id="month-bootstrap" name="month" as="select" multiple
+            value={month} 
+            onChange={evt => {
+              const selectedMonths=[];
+              for (let i=0; i< evt.target.selectedOptions.length; i++) {
+                selectedMonths.push(parseInt(evt.target.selectedOptions[i].value));
+              }
+              setMonth(selectedMonths);
+            }}
+          >
+            <option value='1'>January</option>
+            <option value='2'>February</option>
+            <option value='3'>March</option>
+            <option value='4'>April</option>
+            <option value='5'>May</option>
+            <option value='6'>Jun</option>
+            <option value='7'>July</option>
+            <option value='8'>August</option>
+            <option value='9'>September</option>
+            <option value='10'>October</option>
+            <option value='11'>November</option>
+            <option value='12'>December</option>
+          </ReactBootstrap.Form.Control>
+        </ReactBootstrap.Form.Group>
